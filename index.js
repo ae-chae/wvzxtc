@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+ 
 // Function to display text art
 function displayTextArt() {
   const textArt =
