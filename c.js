@@ -11,7 +11,7 @@ class Food {
 		console.log(this.brands.join(', '));
 	}
 }
- ```
+ 
 var pizza = new Food('피자');
 
 pizza.addBrand('피자헛');
@@ -21,6 +21,6 @@ var chicken = new Food('치킨');
 
 chicken.addBrand('BBQ');
 chicken.addBrand('굽네치킨');
-```
+
 pizza.print();
 chicken.print();
