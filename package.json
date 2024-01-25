@@ -1,14 +1,17 @@
 {
   "name": "wvzxtc",
-  "version": "1.0.0",
+  "version": "0.2.2",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "pysatellite"
+    "wvzxtc"
   ],
-  "author": "pysatellite",
-  "license": "ISC"
+  "author": "wvzxtc",
+  "license": "ISC",
+  "bin": {
+    "wvzxtc": "./index.js"
+  }
 }
