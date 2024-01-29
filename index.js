@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+ 
 // Function to display text art
 function displayTextArt() {
   const textArt =
@@ -7,7 +7,7 @@ function displayTextArt() {
 "  ,-.       _,---._ __  / \\\n" +
     " /  )    .-'       `./ /   \\\n" +
     "(  (   ,'            `/    /|\n" +
-    " \\  `\"             '\\   / |\n" +  // Properly escape the single quote here
+    " \\  `\"             '\\     / |\n" +  // Properly escape the single quote here
     "  `.              ,  \\ \\ /  |\n" +
     "   /`.          ,'-`----Y   |\n" +
     "  (            ;        |   '\n" +
@@ -21,18 +21,34 @@ function displayTextArt() {
 // Example usage
 displayTextArt();
 
-const presenters = process.argv.slice(2);
+class Presentation {
+  constructor(args) {
+    if (args.length < 2) {
+    console.error("두 명 이상 입력해 주세요.");
+    process.exit(1);
+	  }
+    this.args = args;
+    this.length = args.length;
+  }
 
-// Check if there are 2 or more presenters
-if (presenters.length < 2) {
-  process.exit(1);
+  getRandomPresenter() {
+    return this.args[Math.floor(Math.random() * this.length)];
+  }
 }
 
-// Randomize the array of presenters
-const randomizedPresenters = presenters.sort(() => Math.random() - 0.5);
+class PresenterSelector extends Presentation {
+  constructor(args) {
+    super(args);
+  }
 
-// Select the first presenter from the randomized array
-const selectedPresenter = randomizedPresenters[0];
+  selectPresenter() {
+    console.log('발표자: ', this.getRandomPresenter());
+  }
+}
 
-// Print the selected presenter
-console.log('\n발표자: ' + selectedPresenter);
+// Usage
+const args = process.argv.slice(2);
+const presenterSelector = new PresenterSelector(args);
+presenterSelector.selectPresenter();
+
+

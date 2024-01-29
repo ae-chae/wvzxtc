@@ -24,3 +24,5 @@ chicken.addBrand('굽네치킨');
 
 pizza.print();
 chicken.print();
+ 
+
